@@ -26,6 +26,8 @@ private slots:
 
     void on_stopButton_4_clicked();
 
+    void on_horizontalSlider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 };

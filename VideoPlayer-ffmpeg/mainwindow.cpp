@@ -21,12 +21,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     qDebug()<<"aaaaaaaa";
-    QStringList filenames  = QFileDialog::getOpenFileNames(this,"看看电影","C://Users/Administrator\Desktop",
-                                                           "allfiles(*.*)"
-                                                           "MP3(*.mp3);;"
-                                                           "MP4(*.mp4);;"
-                                                           "MKV(*mkv);;"
-                                                           "AVI(*.AVI)");
+    QStringList filenames  = QFileDialog::getOpenFileNames(this,"看看电影","/",
+                                                           "视频文件(*.mp4 *.avi *.mkv);;"
+                                                           "音频文件(*.mp3 *.acc)");
 //    QString filenames = QFileDialog::getOpenFileName(this,tr("选择文件"), "/", "All files (*)");
     foreach(QString const & str,filenames){
         qDebug() << str << "on_pushButton_clicked";
@@ -46,4 +43,9 @@ void MainWindow::on_pasueButton_3_clicked()
 void MainWindow::on_stopButton_4_clicked()
 {
     qDebug()<<"dddddddd";
+}
+
+void MainWindow::on_horizontalSlider_valueChanged(int value)
+{
+    qDebug() << "on_horizontalSlider_valueChanged" << value;
 }

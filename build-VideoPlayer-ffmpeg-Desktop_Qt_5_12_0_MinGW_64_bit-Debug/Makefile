@@ -206,6 +206,7 @@ Makefile: ../VideoPlayer-ffmpeg/VideoPlayer-ffmpeg.pro C:/QT/Qt5.12.0/5.12.0/min
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/qt_config.prf \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/toolchain.prf \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/default_pre.prf \
@@ -379,6 +380,7 @@ C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/qt_functions.prf:
 C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/qt_config.prf:
 C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/win32-g++/qmake.conf:
 C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/exclusive_builds.prf:
 C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/toolchain.prf:
 C:/QT/Qt5.12.0/5.12.0/mingw73_64/mkspecs/features/default_pre.prf:
