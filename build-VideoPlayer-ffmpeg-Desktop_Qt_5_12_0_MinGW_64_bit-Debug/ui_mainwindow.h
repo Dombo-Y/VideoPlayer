@@ -38,9 +38,9 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton_3;
+    QPushButton *pasueButton_3;
     QSpacerItem *horizontalSpacer_3;
-    QPushButton *pushButton_4;
+    QPushButton *stopButton_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -97,21 +97,21 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setMinimumSize(QSize(0, 30));
+        pasueButton_3 = new QPushButton(widget);
+        pasueButton_3->setObjectName(QString::fromUtf8("pasueButton_3"));
+        pasueButton_3->setMinimumSize(QSize(0, 30));
 
-        horizontalLayout->addWidget(pushButton_3);
+        horizontalLayout->addWidget(pasueButton_3);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 30));
+        stopButton_4 = new QPushButton(widget);
+        stopButton_4->setObjectName(QString::fromUtf8("stopButton_4"));
+        stopButton_4->setMinimumSize(QSize(0, 30));
 
-        horizontalLayout->addWidget(pushButton_4);
+        horizontalLayout->addWidget(stopButton_4);
 
 
         gridLayout->addWidget(widget, 2, 0, 1, 1);
@@ -139,8 +139,8 @@ public:
         label->setText(QApplication::translate("MainWindow", "\345\212\240\346\262\271\345\225\212\357\274\201\357\274\201\357\274\201\357\274\201\360\237\230\200", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "\346\211\223\345\274\200", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "\346\222\255\346\224\276", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "\346\232\202\345\201\234", nullptr));
-        pushButton_4->setText(QApplication::translate("MainWindow", "\345\201\234\346\255\242", nullptr));
+        pasueButton_3->setText(QApplication::translate("MainWindow", "\346\232\202\345\201\234", nullptr));
+        stopButton_4->setText(QApplication::translate("MainWindow", "\345\201\234\346\255\242", nullptr));
     } // retranslateUi
 
 };
