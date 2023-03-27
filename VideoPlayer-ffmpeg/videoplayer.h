@@ -86,6 +86,16 @@ private:
     int _aSeekTime = -1; // 外面设置的当前播放时刻（用于完成seek 功能）
     int _hasAudio = false; // 是否有音频流
 
+
+    int initAudioInfo();// 初始化音频信息
+    int initSwr(); //初始化音频重采样
+    int initSDL(); // 初始化SDL
+    void addAudioPkt(AVPacket &pkt);// 添加数据包到音频包列表中
+    void clearAudioPktList();// 清空音频包列表
+    static void sdlAudioCallbackFunc(void *userdata, uint8_t *stream, int len);//SDL填充缓冲区的回调函数
+    void sdlAudioCallback(uint8_t *stream, int len);// SDL填充缓冲区的回调函数
+    int decodeAudio(); // 音频解码
+
     AVCodecContext *_vDecodeCtx = nullptr; // 解码上下文
     AVStream *_vStream = nullptr;// 流
     AVFrame *_vSwsInframe = nullptr, *_vSwsOutFrame = nullptr;// 像素格式转换的输入\输出frame
@@ -97,6 +107,12 @@ private:
     bool _vCanFree = false; // 视频资源是否可以释放
     int _vSeekTime = -1;// 外面设置的当前播放时刻（用于完成seek功能）
     bool _hasVideo = false; // 是否有视频流
+
+    int initVideoInfo();//  初始化视频信息
+    int initSws(); // 初始化视频像素格式转换
+    void addVideoPkt(AVPacket &pkt);// 添加数据包到视频包列表中
+    void clearVideoPktList();// 清空视频包列表
+    void decodeVideo(); // 解码视频
 
     /******** 其他 ********/
     AVFormatContext *_fmtCtx = nullptr;// 解封装上下文

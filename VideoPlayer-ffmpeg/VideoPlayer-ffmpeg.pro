@@ -28,7 +28,9 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     videoslider.cpp \
-    videoplayer.cpp
+    videoplayer.cpp \
+    videoplayer_audio.cpp \
+    videoplayer_video.cpp
 
 HEADERS += \
         mainwindow.h \
