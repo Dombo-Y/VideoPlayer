@@ -58,11 +58,13 @@ void videoPlayer::setFilename(QString &filename) {
 }
 
 int videoPlayer::getDuration() {
-    return _fmtCtx ? round(_fmtCtx->duration * av_q2d(AV_TIME_BASE_Q)) : 0;
+    double_t c_duration =_fmtCtx->duration * av_q2d(AV_TIME_BASE_Q);
+    int temp_duration = static_cast<int>(round(c_duration));
+    return _fmtCtx ? temp_duration : 0;
 }
 
 int videoPlayer::getTime() {
-    return round(_aTime);
+    return static_cast<int>(round(_aTime));
 }
 
 void videoPlayer::setTime() {
@@ -154,7 +156,7 @@ void videoPlayer::readFile() {
     }
 }
 
-
+//初始化解码器
 int videoPlayer::initDecoder(AVCodecContext **decodeCtx, AVStream **stream, AVMediaType type) {
     int ret = av_find_best_stream(_fmtCtx,type,-1, -1, nullptr,0);
     RET(av_find_best_stream);
