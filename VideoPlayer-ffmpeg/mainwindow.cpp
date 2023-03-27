@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QFileDialog>
-
+#include<SDL2/SDL.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -43,6 +43,10 @@ void MainWindow::on_pasueButton_3_clicked()
 void MainWindow::on_stopButton_4_clicked()
 {
     qDebug()<<"dddddddd";
+    SDL_version version;
+    SDL_VERSION(&version);
+    qDebug() << version.major << version.patch;
+
 }
 
 void MainWindow::on_horizontalSlider_valueChanged(int value)

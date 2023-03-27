@@ -54,6 +54,7 @@ LIBS += -L ../ffmpeg/lib \
         -lavutil \
         -lpostproc \
         -lswresample \
+        -lSDL2 \
         -lswscale
 }
 

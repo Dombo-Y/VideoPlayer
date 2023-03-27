@@ -17,7 +17,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wall -W -Wextra -fe
 INCPATH       = -I..\VideoPlayer-ffmpeg -I. -I..\ffmpeg\include -I..\SDL2-2.26.4\x86_64-w64-mingw32\include -IC:\QT\Qt5.12.0\5.12.0\mingw73_64\include -IC:\QT\Qt5.12.0\5.12.0\mingw73_64\include\QtWidgets -IC:\QT\Qt5.12.0\5.12.0\mingw73_64\include\QtGui -IC:\QT\Qt5.12.0\5.12.0\mingw73_64\include\QtANGLE -IC:\QT\Qt5.12.0\5.12.0\mingw73_64\include\QtCore -Irelease -I. -I\include -IC:\QT\Qt5.12.0\5.12.0\mingw73_64\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -L ..\ffmpeg\lib -lavcodec -lavdevice -lavfilter -lavformat -lavutil -lpostproc -lswresample -lswscale -LC:\QT\Qt5.12.0\5.12.0\mingw73_64\lib C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Widgets.a C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Gui.a C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Core.a  -lmingw32 C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 -LC:\QT\Qt5.12.0\5.12.0\mingw73_64\lib C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Core.a 
+LIBS        =        -L ..\ffmpeg\lib -lavcodec -lavdevice -lavfilter -lavformat -lavutil -lpostproc -lswresample -lSDL2 -lswscale -LC:\QT\Qt5.12.0\5.12.0\mingw73_64\lib C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Widgets.a C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Gui.a C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Core.a  -lmingw32 C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.6.11-winx64\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 -LC:\QT\Qt5.12.0\5.12.0\mingw73_64\lib C:\QT\Qt5.12.0\5.12.0\mingw73_64\lib\libQt5Core.a 
 QMAKE         = C:\QT\Qt5.12.0\5.12.0\mingw73_64\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -472,7 +472,40 @@ release/main.o: ../VideoPlayer-ffmpeg/main.cpp ../VideoPlayer-ffmpeg/mainwindow.
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/include/QtCore/qeventloop.h \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/QT/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qguiapplication.h \
-		C:/QT/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qinputmethod.h
+		C:/QT/Qt5.12.0/5.12.0/mingw73_64/include/QtGui/qinputmethod.h \
+		../ffmpeg/include/libavdevice/avdevice.h \
+		../ffmpeg/include/libavdevice/version_major.h \
+		../ffmpeg/include/libavdevice/version.h \
+		../ffmpeg/include/libavutil/version.h \
+		../ffmpeg/include/libavutil/macros.h \
+		../ffmpeg/include/libavutil/avconfig.h \
+		../ffmpeg/include/libavutil/log.h \
+		../ffmpeg/include/libavutil/attributes.h \
+		../ffmpeg/include/libavutil/opt.h \
+		../ffmpeg/include/libavutil/rational.h \
+		../ffmpeg/include/libavutil/avutil.h \
+		../ffmpeg/include/libavutil/common.h \
+		../ffmpeg/include/libavutil/mem.h \
+		../ffmpeg/include/libavutil/error.h \
+		../ffmpeg/include/libavutil/mathematics.h \
+		../ffmpeg/include/libavutil/intfloat.h \
+		../ffmpeg/include/libavutil/pixfmt.h \
+		../ffmpeg/include/libavutil/channel_layout.h \
+		../ffmpeg/include/libavutil/dict.h \
+		../ffmpeg/include/libavutil/samplefmt.h \
+		../ffmpeg/include/libavformat/avformat.h \
+		../ffmpeg/include/libavcodec/codec.h \
+		../ffmpeg/include/libavutil/hwcontext.h \
+		../ffmpeg/include/libavutil/buffer.h \
+		../ffmpeg/include/libavutil/frame.h \
+		../ffmpeg/include/libavcodec/codec_id.h \
+		../ffmpeg/include/libavcodec/version_major.h \
+		../ffmpeg/include/libavcodec/codec_par.h \
+		../ffmpeg/include/libavcodec/defs.h \
+		../ffmpeg/include/libavcodec/packet.h \
+		../ffmpeg/include/libavformat/avio.h \
+		../ffmpeg/include/libavformat/version_major.h \
+		../ffmpeg/include/libavformat/version.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\VideoPlayer-ffmpeg\main.cpp
 
 release/mainwindow.o: ../VideoPlayer-ffmpeg/mainwindow.cpp ../VideoPlayer-ffmpeg/mainwindow.h \

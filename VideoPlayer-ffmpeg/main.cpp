@@ -1,11 +1,9 @@
 #include "mainwindow.h"
 #include <QApplication>
-
 extern "C"
 {
 
 #include <libavdevice/avdevice.h>
-
 }
 
 int main(int argc, char *argv[])
