@@ -40,3 +40,20 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32 {
+INCLUDEPATH += ..\ffmpeg\include
+INCLUDEPATH +=  ..\SDL2-2.26.4\x86_64-w64-mingw32\include
+
+#LIBS += -L ../SDL2-2.26.4/x86_64-w64-mingw32/lib -lSDL2
+LIBS += -L ../ffmpeg/lib \
+        -lavcodec \
+        -lavdevice \
+        -lavfilter \
+        -lavformat \
+        -lavutil \
+        -lpostproc \
+        -lswresample \
+        -lswscale
+}
+

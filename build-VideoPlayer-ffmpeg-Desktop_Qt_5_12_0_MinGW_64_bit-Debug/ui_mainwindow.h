@@ -89,6 +89,7 @@ public:
 
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setEnabled(false);
         pushButton_2->setMinimumSize(QSize(0, 30));
 
         horizontalLayout->addWidget(pushButton_2);
@@ -99,6 +100,7 @@ public:
 
         pasueButton_3 = new QPushButton(widget);
         pasueButton_3->setObjectName(QString::fromUtf8("pasueButton_3"));
+        pasueButton_3->setEnabled(false);
         pasueButton_3->setMinimumSize(QSize(0, 30));
 
         horizontalLayout->addWidget(pasueButton_3);
@@ -109,6 +111,7 @@ public:
 
         stopButton_4 = new QPushButton(widget);
         stopButton_4->setObjectName(QString::fromUtf8("stopButton_4"));
+        stopButton_4->setEnabled(false);
         stopButton_4->setMinimumSize(QSize(0, 30));
 
         horizontalLayout->addWidget(stopButton_4);
