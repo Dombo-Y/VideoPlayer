@@ -120,12 +120,37 @@ void videoPlayer::readFile() {
 //                clearVideoPktList();
             }
         }
-//        int vSize = _vPktList.size();
-//        int aSize = _aPktList.size();
-//        if(vSize >= VIDEO_MAX_PKT_SIZE || aSize >= AUDIO_MAX_PKT_SIZE {
-//                continue;
-//            }
-//        }
+        int vSize = _vPktList.size();
+        int aSize = _aPktList.size();
+        if(vSize >= VIDEO_MAX_PKT_SIZE || aSize >= AUDIO_MAX_PKT_SIZE) {
+                continue;
+        }
+
+        ret = av_read_frame(_fmtCtx, &pkt);
+        if(ret == 0){
+            if(pkt.stream_index == _aStream->index) { //读取到的是音频数据
+
+            }else if(pkt.stream_index == _vStream->index) { // 读取到的是视频数据
+
+            }else { //如果不是音频、视频，直接释放
+
+            }
+        }else if(ret == AVERROR_EOF) {
+            if(vSize == 0 && aSize == 0) {
+                _fmtCtxCanFree = true;
+                break;
+            }
+        } else {
+            ERROR_BUF
+            qDebug()<<"av_read_frame error" << errbuf;
+            continue;
+        }
+    }
+    if(_fmtCtxCanFree){ //文件正常播放完毕
+        stop();
+    }else {
+        // 标记一下：_fmtCtx可以释放了
+        _fmtCtxCanFree = true;
     }
 }
 
