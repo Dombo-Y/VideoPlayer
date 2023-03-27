@@ -44,7 +44,7 @@ void videoPlayer::stop() {
     if(_state == Stopped) return;
     _state = Stopped;
     free();
-//    emit stateChange(this);
+    emit stateChanged(this);
 }
 
 bool videoPlayer::isPlaying() {
@@ -197,7 +197,7 @@ int videoPlayer::initDecoder(AVCodecContext **decodeCtx, AVStream **stream, AVMe
 void videoPlayer::setState(State state) {
     if(state == _state) return;
     _state = state;
-//    emit
+    emit stateChanged(this);
 }
 
 void videoPlayer::free(){

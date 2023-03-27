@@ -140,11 +140,11 @@ private:
     void fataError();
 
 signals:
-//    void stateChanged(videoPlayer *player);
-//    void timeChanged(videoPlayer *player);
-//    void initFinished(videoPlayer *player);
-//    void playFailed(videoPlayer *player);
-//    void frameDecoded(videoPlayer *player, uint8_t *data, VideoSwsSpec &spec);
+    void stateChanged(videoPlayer *player);
+    void timeChanged(videoPlayer *player);
+    void initFinished(videoPlayer *player);
+    void playFailed(videoPlayer *player);
+    void frameDecoded(videoPlayer *player, uint8_t *data, VideoSwsSpec &spec);
 
 public slots:
 };

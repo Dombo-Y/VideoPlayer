@@ -11,6 +11,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     setWindowTitle("加油~~~");
+
+
+//    qRegisterMetaType<videoPlayer::VideoSwsSpec>("VideoSwsSpec&");
+
+//    _player = new videoPlayer();
+//    connect(_player, &videoPlayer::stateChanged,this,&MainWindow::onPlayerStateChanged);
+//    connect(_player, &videoPlayer::stateChanged,this,&MainWindow::onPlayerStateChanged);
+//    connect(_player, &videoPlayer::stateChanged,this,&MainWindow::onPlayerStateChanged);
+
 }
 
 MainWindow::~MainWindow()
