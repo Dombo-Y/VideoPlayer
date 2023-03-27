@@ -1,0 +1,10 @@
+release/main.o
+release/mainwindow.o
+release/videoslider.o
+release/videoplayer.o
+release/videoplayer_audio.o
+release/videoplayer_video.o
+release/condmutex.o
+release/moc_mainwindow.o
+release/moc_videoslider.o
+release/moc_videoplayer.o

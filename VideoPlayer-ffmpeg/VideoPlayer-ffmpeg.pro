@@ -30,12 +30,14 @@ SOURCES += \
     videoslider.cpp \
     videoplayer.cpp \
     videoplayer_audio.cpp \
-    videoplayer_video.cpp
+    videoplayer_video.cpp \
+    condmutex.cpp
 
 HEADERS += \
         mainwindow.h \
     videoslider.h \
-    videoplayer.h
+    videoplayer.h \
+    condmutex.h
 
 FORMS += \
         mainwindow.ui

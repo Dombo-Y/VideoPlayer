@@ -1,5 +1,5 @@
 #include "videoplayer.h"
-
+#include <thread>
 #include <QDebug>
 #include <SDL2/SDL.h>
 
@@ -26,21 +26,24 @@ void videoPlayer::play() {
     if(_state == Playing) return;
     if(_state == Stopped){
         // 开始线程：读取文件
+        std::thread([this]() {
+            readFile();
+        }).detach();
     }else {
         // 改变状态
+        setState(Playing);
     }
 }
 
 void videoPlayer::pause() {
     if(_state != Playing) return;
-
-//    setState(Paused);
+    setState(Paused);
 }
 
 void videoPlayer::stop() {
     if(_state == Stopped) return;
     _state = Stopped;
-//    free();
+    free();
 //    emit stateChange(this);
 }
 
@@ -67,8 +70,8 @@ int videoPlayer::getTime() {
     return static_cast<int>(round(_aTime));
 }
 
-void videoPlayer::setTime() {
-//    _seekTime =
+void videoPlayer::setTime(int seekTime) {
+    _seekTime = seekTime;
 }
 
 #pragma mark - 私有方法
@@ -80,10 +83,10 @@ void videoPlayer::readFile() {
     av_dump_format(_fmtCtx,0,_filename,0);
     fflush(stderr);
 
-//    _hasAudio = initAudio //初始化啊音频信息
+    _hasAudio = initAudioInfo() >= 0; //初始化啊音频信息
 //    _hasVideo = initVideoInfo() >= 0; // 初始化视频信息
     if(!_hasAudio && !_hasVideo){
-//        fataError();
+        fataError();
         return;
     }
 
@@ -91,6 +94,8 @@ void videoPlayer::readFile() {
     setState(Playing);
     SDL_PauseAudio(0);// 音频解码子程序开始工作
     //视频解码子程序：开始工作
+
+
 
     AVPacket pkt;//从输入文件中读取数据
     while(_state != Stopped){
