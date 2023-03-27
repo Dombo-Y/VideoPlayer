@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    videoslider.cpp
+    videoslider.cpp \
+    videoplayer.cpp
 
 HEADERS += \
         mainwindow.h \
-    videoslider.h
+    videoslider.h \
+    videoplayer.h
 
 FORMS += \
         mainwindow.ui

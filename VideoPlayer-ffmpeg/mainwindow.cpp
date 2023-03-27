@@ -27,7 +27,7 @@ void MainWindow::on_pushButton_clicked()
 //    QString filenames = QFileDialog::getOpenFileName(this,tr("选择文件"), "/", "All files (*)");
     foreach(QString const & str,filenames){
         qDebug() << str << "on_pushButton_clicked";
-    }
+    }// D:/github/VideoPlayer/video_001.mp4
 }
 
 void MainWindow::on_pushButton_2_clicked()
