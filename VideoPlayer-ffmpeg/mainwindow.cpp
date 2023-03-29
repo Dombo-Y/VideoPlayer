@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include<SDL2/SDL.h>
+#include <videoplayer.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
 //    connect(_player, &videoPlayer::stateChanged,this,&MainWindow::onPlayerStateChanged);
 //    connect(_player, &videoPlayer::stateChanged,this,&MainWindow::onPlayerStateChanged);
 //    connect(_player, &videoPlayer::stateChanged,this,&MainWindow::onPlayerStateChanged);
+
 
 }
 

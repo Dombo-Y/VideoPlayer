@@ -5,6 +5,8 @@ debug/videoplayer.o
 debug/videoplayer_audio.o
 debug/videoplayer_video.o
 debug/condmutex.o
+debug/aplayer.o
 debug/moc_mainwindow.o
 debug/moc_videoslider.o
 debug/moc_videoplayer.o
+debug/moc_aplayer.o

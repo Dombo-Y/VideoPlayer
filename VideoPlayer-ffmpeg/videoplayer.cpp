@@ -84,7 +84,7 @@ void videoPlayer::readFile() {
     fflush(stderr);
 
     _hasAudio = initAudioInfo() >= 0; //初始化啊音频信息
-//    _hasVideo = initVideoInfo() >= 0; // 初始化视频信息
+    _hasVideo = initVideoInfo() >= 0; // 初始化视频信息
     if(!_hasAudio && !_hasVideo){
         fataError();
         return;
@@ -94,8 +94,6 @@ void videoPlayer::readFile() {
     setState(Playing);
     SDL_PauseAudio(0);// 音频解码子程序开始工作
     //视频解码子程序：开始工作
-
-
 
     AVPacket pkt;//从输入文件中读取数据
     while(_state != Stopped){
@@ -123,8 +121,8 @@ void videoPlayer::readFile() {
                 _vTime = 0;
 
 //                // 清空之前读取的数据包
-//                clearAudioPktList();
-//                clearVideoPktList();
+                clearAudioPktList();
+                clearVideoPktList();
             }
         }
         int vSize = _vPktList.size();
@@ -136,11 +134,11 @@ void videoPlayer::readFile() {
         ret = av_read_frame(_fmtCtx, &pkt);
         if(ret == 0){
             if(pkt.stream_index == _aStream->index) { //读取到的是音频数据
-
+                addAudioPkt(pkt);
             }else if(pkt.stream_index == _vStream->index) { // 读取到的是视频数据
-
+                addVideoPkt(pkt);
             }else { //如果不是音频、视频，直接释放
-
+                av_packet_unref(&pkt);
             }
         }else if(ret == AVERROR_EOF) {
             if(vSize == 0 && aSize == 0) {

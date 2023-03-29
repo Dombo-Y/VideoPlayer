@@ -4,9 +4,6 @@
 #include <QMainWindow>
 #include <QPushButton>
 
-
-//#include <videoplayer.h>
-
 namespace Ui {
 class MainWindow;
 }
@@ -32,8 +29,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-//    videoPlayer *_playerA;
-//    QString getTimeText(int value);
 };
 
 #endif // MAINWINDOW_H
